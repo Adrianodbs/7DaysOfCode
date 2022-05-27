@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@200;300;500;700&display=swap');
+
+:root{
+  --azul-100: #454558;
+  --azul-200: #1D1C3B;
+  --azul-300: #17162E;
+
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Kumbh Sans', sans-serif;
+}
+
+body{
+  width: 100%;
+  background-color: var(--azul-300);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* Css Cabecalho */
+
+header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  color: #fff;
+}
+
+header h1{
+  margin-top: 60px;
+  margin-bottom: 40px;
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.pesquisa{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--azul-100);
+  width: 450px;
+  height: 43px;
+  padding: 8px 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.pesquisa input{
+  width: 90%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.pesquisa img{
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+
+.checkbox{
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+#check{
+  border: 1px solid var(--azul-200);
+  background-color: #454558;
+}
+
+/* Css main */
+
+.filmes{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.filme{
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  background-color: var(--azul-200);
+  padding: 40px;
+  border-radius: 8px;
+  margin-bottom: 50px;
+}
+
+.filme__img{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.filme__info{
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+}
+
+.filme__info-nota{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.nota, .favoritar{
+  display: flex;
+  gap: 10px;
+  font-weight: 200;
+}
+
+.descricao{
+  width: 45%;
+  font-weight: 200;
+}
