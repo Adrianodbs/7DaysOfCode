@@ -1,6 +1,39 @@
 import { api } from '../../key/Api.js'
 
 const moviesContainer = document.querySelector('.movies')
+const input = document.querySelector('input')
+const searchButton = document.querySelector('.searchIcon')
+
+searchButton.addEventListener('click', searchMovie)
+
+input.addEventListener('keyup', function (event) {
+  console.log(event.key)
+  if (event.keyCode == 13) {
+    // Press enter (submit)
+    searchMovie()
+    return
+  }
+})
+
+async function searchMovie() {
+  const inputValue = input.value
+  if (inputValue != '') {
+    cleanAllMovies()
+    const movies = await searchMovieByName(inputValue)
+    movies.forEach(movie => renderMovie(movie))
+  }
+}
+
+function cleanAllMovies() {
+  moviesContainer.innerHTML = ''
+}
+
+async function searchMovieByName(title) {
+  const url = `https://api.themoviedb.org/3/search/movie?api_key=${api}&query=${title}&language=en-US&page=1`
+  const fetchResponse = await fetch(url)
+  const { results } = await fetchResponse.json()
+  return results
+}
 
 async function getPopularMovies() {
   const url = `https://api.themoviedb.org/3/movie/popular?api_key=${api}&language=en-US&page=1`
